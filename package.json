@@ -1,0 +1,24 @@
+{
+  "name": "graphqlExample",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "prestart": "npm run build",
+    "start": "node dist/index",
+    "clean": "rimraf dist",
+    "build": "npm run clean && mkdir dist && babel src/ -s -d dist"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.2.2",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
