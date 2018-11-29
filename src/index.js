@@ -1,11 +1,14 @@
-const express = require('express');
-const { ApolloServer, gql } = require('apollo-server-express');
+import express from 'express';
+import { ApolloServer, gql } from 'apollo-server-express';
 import { typeDefs, resolvers } from './typeDefs.js';
+import cors from 'cors';
 
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
+app.use(cors());
+
 server.applyMiddleware({ app });
 
 const port = 4000;
